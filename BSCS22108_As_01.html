@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khuzaima's Profile</title>
+    <title>My Profile</title>
     <style>
-        /* General Body Styling */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -254,52 +253,25 @@
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#awards">Awards & Certifications</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#awards">Awards</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <!-- Language Selector -->
-        <select id="languageSelect">
-            <option value="en">English</option>
-            <option value="ar">Arabic</option>
-            <option value="ur">Urdu</option>
-            <option value="fr">French</option>
-        </select>
     </nav>
-<!-- About Me Section -->
-<section id="about">
-    <h1 id="name"></h1>
-    <p id="description"></p>
-    <video width="320" height="240" controls>
-        <source src="https://cdn.pixabay.com/video/2024/05/05/210707_tiny.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</section>
 
-<!-- Skills Section -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container" id="skillsList"></div>
-</section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul id="projectsList"></ul>
-    </section>
-
-    <!-- Awards, Certifications & Trainings Section -->
-    <section id="awards">
-        <h2>Awards, Certifications & Trainings</h2>
-        <ul id="awardsList"></ul>
+    <!-- About Me Section -->
+    <section id="about">
+        <h1 id="name"></h1>
+        <p id="description"></p>
+        <video width="320" height="240" controls>
+            <source src="https://cdn.pixabay.com/video/2024/05/05/210707_tiny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
 
     <!-- Education Section -->
@@ -311,70 +283,72 @@
         <ul id="shortCoursesList"></ul>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div id="skillsList"></div>
+    </section>
 
-  <!-- Social Media Feed -->
-  <section id="social">
-    <h2>Social Media Feed</h2>
-    <p>Follow me on social media for updates on my latest projects and achievements:</p>
-    <ul id="socialList"></ul>
-</section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul id="projectsList"></ul>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact</h2>
-    <p>If you wish to reach out, feel free to contact me at <a href="mailto:your_email@example.com">your_email@example.com</a>.</p>
-</section>
+    <!-- Awards Section -->
+    <section id="awards">
+        <h2>Awards</h2>
+        <ul id="awardsList"></ul>
+    </section>
 
-    <!-- JavaScript Code -->
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you wish to reach out, feel free to contact me at <a href="mailto:your_email@example.com" id="contactEmail">your_email@example.com</a>.</p>
+    </section>
+
     <script>
-    // all JavaScript code will be written here
+        // JavaScript Code
+        const profileData = {
+            name: "Muhammad Khuzaima",
+            about: "I am a highly motivated individual with expertise in technology, problem-solving, and teamwork.",
+            skills: {
+                softSkills: ["Teamwork", "Problem Solving", "Communication", "Leadership"],
+                hardSkills: ["Database Management (MySQL)", "Socket Programming (C, C++)", "Assembly Language"]
+            },
+            projects: [
+                {
+                    name: "Client-Server Application",
+                    description: "Developed a socket-based client-server application with file upload, download, and authentication functionalities."
+                },
+                {
+                    name: "Chess Game",
+                    description: "Created a Chess game in C++ with the option to play with computer as well as with another person."
+                }
+            ],
+            awards: [
+                "Codefest 5.0 participation certificate",
+                "IEEE seminar attendance certificate"
+            ],
+            education: {
+                degrees: [
+                    "Matriculation in Science from DPS Faisalabad",
+                    "ICS from Punjab College Faisalabad",
+                    "Bachelor's in Computer Science from ITU Lahore"
+                ],
+                shortCourses: ["Microsoft Office", "Freelancing Course"]
+            },
+            contact: {
+                email: "khuzaimaiqbal91@gmail.com"
+            }
+        };
 
-    //About me and skills
-    const profileData = {
-    name: "Muhammad Khuzaima",
-    about: "I am a highly motivated individual with expertise in technology, problem-solving, and teamwork.",
-    videoSrc: "https://cdn.pixabay.com/video/2024/05/05/210707_tiny.mp4",
-    skills: {
-        softSkills: ["Teamwork", "Problem Solving", "Communication", "Leadership"],
-        hardSkills: ["Database Management (MySQL)", "Socket Programming (C, C++)", "Assembly Language"]
-    },
-    projects: [
-        {
-            name: "Client-Server Application",
-            description: "Developed a socket-based client-server application with file upload, download, and authentication functionalities."
-        },
-        {
-            name: "Chess game",
-            description: "Created a Chess game in C++ with the option to play with computer as well as with another person."
-        }
-    ],
-    awards: [
-        "Codefest 5.0 participation certificate",
-        "IEEE seminar attendance certificate"
-    ],
-    education: {
-        degrees: [
-            "Matriculation in Science from DPS Faisalabad",
-            "ICS from Punjab College Faisalabad",
-            "Bachelor's in Computer Science from ITU Lahore"
-        ],
-        shortCourses: ["Microsoft Office", "Freelancing Course"]
-    },
-    contact: {
-        email: "khuzaimaiqbal91@gmail.com"
-    }
+        // Function for data population
+        function Data_populate() {
+            document.getElementById('name').innerText = profileData.name;
+            document.getElementById('description').innerText = profileData.about;
 
-
-   };
-
-   //function for data population
-
-   function Data_populate(){
-
-    document.getElementById('aboutName').innerText = profileData.name;
-    document.getElementById('aboutInfo').innerText = profileData.about;
-
-    const skillsContainer = document.getElementById('skillsContainer');
+            const skillsContainer = document.getElementById('skillsList');
             for (const [key, values] of Object.entries(profileData.skills)) {
                 const skillDiv = document.createElement('div');
                 skillDiv.innerHTML = `<h3>${key.replace(/([A-Z])/g, ' $1')}</h3><ul>${values.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
@@ -384,7 +358,7 @@
             const projectsList = document.getElementById('projectsList');
             profileData.projects.forEach(project => {
                 const projectItem = document.createElement('li');
-                projectItem.innerHTML = `<strong>${project.title}</strong><p>${project.description}</p>`;
+                projectItem.innerHTML = `<strong>${project.name}</strong><p>${project.description}</p>`;
                 projectsList.appendChild(projectItem);
             });
 
@@ -396,30 +370,22 @@
             });
 
             const shortCoursesList = document.getElementById('shortCoursesList');
-            profileData.shortCourses.forEach(course => {
+            profileData.education.shortCourses.forEach(course => {
                 const courseItem = document.createElement('li');
                 courseItem.innerText = course;
                 shortCoursesList.appendChild(courseItem);
             });
 
-            const educationDegrees = document.getElementById('educationDegrees');
-            educationDegrees.innerText = profileData.education;
+            const degreesElement = document.getElementById('degrees');
+            degreesElement.innerHTML = profileData.education.degrees.join('<br>');
 
-            const socialList = document.getElementById('socialList');
-            profileData.socialLinks.forEach(link => {
-                const socialItem = document.createElement('li');
-                socialItem.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
-                socialList.appendChild(socialItem);
-            });
+            // Update contact email link
+            const contactEmail = document.querySelector('#contact a');
+            contactEmail.href = `mailto:${profileData.contact.email}`;
+            contactEmail.innerText = profileData.contact.email;
+        }
 
-   }
-
-   window.onload=Data_populate;
-
-
+        window.onload = Data_populate;
     </script>
-
-
-
 </body>
-</html> 
+</html>
