@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khuzaima's Profile</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #f9f9f9;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #00a8ff;
+        }
+
+        /* Language Selector Styling */
+        #languageSelect {
+            background-color: #00a8ff;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            font-size: 16px;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 50px 30px;
+            max-width: 1200px;
+            margin: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            font-size: 36px;
+            color: #444;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 3px solid #00a8ff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        section p, section ul {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* About Me Section */
+        #about {
+            text-align: center;
+        }
+
+        #about h1 {
+            font-size: 48px;
+            color: #00a8ff;
+            margin-bottom: 20px;
+        }
+
+        #about video {
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skills Section Styling */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .skills-container div {
+            background-color: #fff;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            width: 45%;
+        }
+
+        .skills-container h3 {
+            color: #00a8ff;
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .skills-container ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .skills-container ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        #projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #projects ul li {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid #00a8ff;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #projects ul li:hover {
+            transform: translateY(-5px);
+        }
+
+        #projects ul li strong {
+            font-size: 22px;
+            color: #444;
+        }
+
+        #projects ul li p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Awards Section */
+        #awards ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #awards ul li {
+            background-color: #e8f5e9;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-left: 5px solid #4caf50;
+            border-radius: 8px;
+        }
+
+        /* Social Media Feed Styling */
+        #social ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #social ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #social ul li a {
+            background-color: #444;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        #social ul li a:hover {
+            background-color: #00a8ff;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        #contact p {
+            font-size: 20px;
+        }
+
+        #contact a {
+            color: #00a8ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #00a8ff;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0077b6;
+        }
+
+        /* JavaScript for Language Change */
+        #languageSelect {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#awards">Awards & Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Language Selector -->
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="ur">Urdu</option>
+            <option value="fr">French</option>
+        </select>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h1>Muhammad Khuzaima</h1>
+        <p>I am a highly motivated individual with expertise in <em>technology, problem-solving, and teamwork</em>.<br>
+             Below, you'll find more information about my skills, projects, certifications, and education.</p>
+        <video width="320" height="240" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div>
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Teamwork</li>
+                    <li>Problem Solving</li>
+                    <li>Communication</li>
+                    <li>Leadership</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Hard Skills</h3>
+                <ul>
+                    <li>Database Management (MySQL)</li>
+                    <li>Socket Programming (C, C++)</li>
+                    <li>Assembly Language</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>Client-Server Application</strong> 
+                <p>Developed a socket-based client-server application with file upload, download, and authentication functionalities.</p>
+            </li>
+            <li>
+                <strong>Chess game</strong> 
+                <p>Created a Chess game in C++ with the option to play with computer as well as with another person.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Awards, Certifications & Trainings Section -->
+    <section id="awards">
+        <h2>Awards, Certifications & Trainings</h2>
+        <ul>
+            <li>Codefest 5.0 participation certificate</li>
+            <li>IEEE seminar attendence certificate</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        
+        <h3>Degrees</h3>
+        <p>  Done Matriculation in Science from DPS Faisalabad<br>
+            Done ICS from Punjab College Faisalabad<br>
+            Currently doing bachelor's in Computer Science from ITU Lahore</p>
+
+        <h3>Short Courses</h3>
+        <ul>
+            <li>Microsoft Office</li>
+            <li>Freelancing Course</li>
+        </ul>
+    </section>
+
+    <!-- Social Media Feed -->
+    <section id="social">
+        <h2>Social Media Feed</h2>
+        <p>Follow me on social media for updates on my latest projects and achievements:</p>
+        <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Github</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:khuzaimaiqbal91@gmail.com">khuzaimaiqbal91@gmail.com</a></p>
+    </section>
+
+
+</body>
+</html> 
