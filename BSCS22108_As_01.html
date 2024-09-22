@@ -367,6 +367,56 @@
 
    };
 
+   //function for data population
+
+   function Data_populate(){
+
+    document.getElementById('aboutName').innerText = profileData.name;
+    document.getElementById('aboutInfo').innerText = profileData.about;
+
+    const skillsContainer = document.getElementById('skillsContainer');
+            for (const [key, values] of Object.entries(profileData.skills)) {
+                const skillDiv = document.createElement('div');
+                skillDiv.innerHTML = `<h3>${key.replace(/([A-Z])/g, ' $1')}</h3><ul>${values.map(skill => `<li>${skill}</li>`).join('')}</ul>`;
+                skillsContainer.appendChild(skillDiv);
+            }
+
+            const projectsList = document.getElementById('projectsList');
+            profileData.projects.forEach(project => {
+                const projectItem = document.createElement('li');
+                projectItem.innerHTML = `<strong>${project.title}</strong><p>${project.description}</p>`;
+                projectsList.appendChild(projectItem);
+            });
+
+            const awardsList = document.getElementById('awardsList');
+            profileData.awards.forEach(award => {
+                const awardItem = document.createElement('li');
+                awardItem.innerText = award;
+                awardsList.appendChild(awardItem);
+            });
+
+            const shortCoursesList = document.getElementById('shortCoursesList');
+            profileData.shortCourses.forEach(course => {
+                const courseItem = document.createElement('li');
+                courseItem.innerText = course;
+                shortCoursesList.appendChild(courseItem);
+            });
+
+            const educationDegrees = document.getElementById('educationDegrees');
+            educationDegrees.innerText = profileData.education;
+
+            const socialList = document.getElementById('socialList');
+            profileData.socialLinks.forEach(link => {
+                const socialItem = document.createElement('li');
+                socialItem.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
+                socialList.appendChild(socialItem);
+            });
+
+   }
+
+   window.onload=Data_populate;
+
+
     </script>
 
 
