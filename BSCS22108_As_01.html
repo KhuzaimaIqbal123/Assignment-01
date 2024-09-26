@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile</title>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -250,6 +251,56 @@
             float: right;
         }
 
+        /* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #f9f9f9;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content li a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #00a8ff;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #00a8ff;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -260,7 +311,14 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+                <a class="dropbtn">More</a>
+                <ul class="dropdown-content">
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#social">Social Media</a></li>
+                </ul>
+            </li>
+            
         </ul>
     </nav>
 
